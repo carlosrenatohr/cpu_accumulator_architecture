@@ -8,20 +8,33 @@
             <RowDefinition Height="43*"/>
             <RowDefinition Height="255*"/>
         </Grid.RowDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="446" Margin="10,8,0,0" Stroke="#FF1340DA" StrokeThickness="4" VerticalAlignment="Top" Width="472" Grid.RowSpan="3"/>
-        <StackPanel HorizontalAlignment="Left" Height="398" Margin="614,29,0,0" VerticalAlignment="Top" Width="213" Background="#FFCCCCCC" Grid.RowSpan="3" OpacityMask="#FFB62F2F">
-            <DataGrid Height="77" Margin="10,70,10,30"/>
-            <DataGrid Height="77" Margin="10,70,10,30"/>
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="15,8,0,0" Stroke="#FF1340DA" StrokeThickness="4" VerticalAlignment="Top" Width="472" Grid.RowSpan="3"/>
+        <StackPanel HorizontalAlignment="Left" Height="384" Margin="614,43,0,0" VerticalAlignment="Top" Width="213" Grid.RowSpan="3" OpacityMask="#FFB62F2F" Background="#FFCCCCCC">
+            <DataGrid x:Name="grdInstructions" Height="77" Margin="10,70,10,30" RowHeight="30" Cursor="Arrow" MinColumnWidth="15" ItemsSource="{Binding}" CanUserAddRows="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="@" Binding="{Binding memPath1}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Operator" Binding="{Binding Operator}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Operand" Binding="{Binding Operand}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="grdData" Height="77" Margin="10,70,10,30" SelectionMode="Single" SelectionUnit="Cell">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="@" Binding="{Binding memPath2}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Variable" Binding="{Binding Operand}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" IsReadOnly="False"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+           
         </StackPanel>
         <Label BorderBrush="Black" Content="Acumulador" HorizontalAlignment="Left" Margin="81,31,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
 
         <Rectangle HorizontalAlignment="Left" Height="89" Margin="76,29,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="112" RenderTransformOrigin="7.109,6.802"/>
-        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="53,118,721,25" RenderTransformOrigin="-2.594,-0.811"/>
+        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="53,118,721,20" RenderTransformOrigin="-2.594,-0.811"/>
         <Polygon Points="0,0 20,8, 0, 20" Stroke="Black" Fill="Black" Margin="58,43,761,129" RenderTransformOrigin="0.419,-0.273" />
         <Polygon Points="60,100 100,180 180,180 220,100 180,100 160,135 120,135 100,100" 
     		Stretch="Fill" Stroke="Black" 
     		StrokeThickness="2" Width="141" Margin="74,177,627,226" Grid.RowSpan="3"/>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="75,152,742,17.881">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="75,155,742,15">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -33,20 +46,20 @@
         </Image>
 
         <GridSplitter Grid.RowSpan="3" />
-        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="163,154,611,24.881" RenderTransformOrigin="-2.594,-0.811"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="195,122,505,6" RenderTransformOrigin="-2.594,-0.811"/>
-        <GridSplitter HorizontalAlignment="Left" Height="399" Margin="337,43,0,0" VerticalAlignment="Top" Width="16" Background="#FFCCCCCC" Grid.RowSpan="3"/>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="185,153,632,16.881">
+        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="163,154,611,21" RenderTransformOrigin="-2.594,-0.811"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="195,122,503,6" RenderTransformOrigin="-2.594,-0.811"/>
+        <GridSplitter HorizontalAlignment="Left" Height="384" Margin="337,43,0,0" VerticalAlignment="Top" Width="16" Background="#FFCCCCCC" Grid.RowSpan="3"/>
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.26,0.5" Margin="185,156,632,13">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="-90.023"/>
-                    <TranslateTransform/>
+                    <TranslateTransform X="6.001" Y="6"/>
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Polygon Points="0,0 35, 24, 0,48" Stroke="Black" Fill="Black" Margin="328,-1,471,140" RenderTransformOrigin="0.5,0.5" >
+        <Polygon Points="0,0 35, 24, 0,48" Stroke="Black" Fill="Black" Margin="328,-3,471,142" RenderTransformOrigin="0.5,0.5" >
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -56,7 +69,7 @@
                 </TransformGroup>
             </Polygon.RenderTransform>
         </Polygon>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="193,48,508,80" RenderTransformOrigin="-2.594,-0.811"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="188,48,508,80" RenderTransformOrigin="-2.594,-0.811"/>
         <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="4.633,0.369" Margin="182,69,635,101">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -67,14 +80,14 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="116,29,658,201" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="116,25,658,201" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="31,17,691,169" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="-2,47,776,201" RenderTransformOrigin="-2.594,-0.811" Grid.RowSpan="3"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="31,31,784,127" RenderTransformOrigin="-2.594,-0.811"/>
+        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="-4,48,776,201" RenderTransformOrigin="-2.594,-0.811" Grid.RowSpan="3"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="31,31,776,127" RenderTransformOrigin="-2.594,-0.811"/>
         <Label Content="ALU" HorizontalAlignment="Left" Margin="116,25.119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.014,0.089" FontSize="24" FontWeight="Bold" Grid.RowSpan="2" Grid.Row="1"/>
         <Rectangle HorizontalAlignment="Left" Height="80" Margin="215,17,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="87" Grid.Row="2"/>
         <Label BorderBrush="Black" Content="PC " HorizontalAlignment="Left" Margin="230,29,0,0" VerticalAlignment="Top" Grid.Row="2" Height="38" Width="36" FontSize="18" FontWeight="Bold"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="302,3,508,183" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="298,3,505,183" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="317,24,500,204" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -95,15 +108,15 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Rectangle HorizontalAlignment="Left" Height="29" Margin="437,113,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="39"/>
-        <Label BorderBrush="Black" Content="MAR " HorizontalAlignment="Left" Margin="437,113,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="443,113,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="39"/>
+        <Label BorderBrush="Black" Content="MAR " HorizontalAlignment="Left" Margin="443,113,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="71" Margin="33,112,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="108" Grid.Row="2"/>
         <Label BorderBrush="Black" Content="Unidad de &#xA;Control" HorizontalAlignment="Left" Margin="42,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.433,2.727" Height="62" Width="90" FontWeight="Bold" Grid.Row="2" FontSize="14"/>
         <Rectangle HorizontalAlignment="Left" Height="44" Margin="163,130,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="43" RenderTransformOrigin="-0.061,0.792" Grid.Row="2"/>
         <Label BorderBrush="Black" Content="IR " HorizontalAlignment="Left" Margin="173,139,0,0" VerticalAlignment="Top" Grid.Row="2" FontWeight="Bold" FontSize="15"/>
-        <Rectangle HorizontalAlignment="Left" Height="29" Margin="438,24,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="39" Grid.Row="2"/>
-        <Label BorderBrush="Black" Content="MDR " HorizontalAlignment="Left" Margin="437,24,0,0" VerticalAlignment="Top" Grid.Row="2" FontWeight="Bold"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="358,92,409,36" RenderTransformOrigin="-2.594,-0.811"/>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="443,24,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="39" Grid.Row="2"/>
+        <Label BorderBrush="Black" Content="MDR " HorizontalAlignment="Left" Margin="442,24,0,0" VerticalAlignment="Top" Grid.Row="2" FontWeight="Bold"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="353,92,399,36" RenderTransformOrigin="-2.594,-0.811"/>
         <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="349,113,468,57">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -114,7 +127,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="415,113,402,56.881">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="422,113,395,57">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -124,8 +137,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="353,3,409,183" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="-0.271,0.61" Margin="350,24,467,204" Grid.Row="2">
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="353,3,400,183" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="-0.271,0.61" Margin="349,24,468,204" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -135,7 +148,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="415,24,402,204" Grid.Row="2">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="422,24,395,204" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -145,15 +158,15 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="141,118,674,68" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="215,118,508,68" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="1" Stroke="Black" Stretch="Fill" Margin="85,183,197,3" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="137,118,674,68" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="207,118,503,68" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="1" Stroke="Black" Stretch="Fill" Margin="84,183,197,3" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Line X1="0" X2="70" Y1="0"  StrokeThickness="1" Stroke="Black" Stretch="Fill" Margin="64,202,159,-16" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Line X1="70" X2="70" Y1="70" StrokeThickness="1" Stroke="Black" Stretch="Fill" Width="68" Margin="51,183,723,37" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Line X1="70" X2="70" Y1="70" StrokeThickness="1" Stroke="Black" Stretch="Fill" Width="68" Margin="31,183,743,18" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Line X1="70" X2="70" Y1="70" StrokeThickness="1" Stroke="Black" Stretch="Fill" Width="68" Margin="649,195,125,18" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Line X1="70" X2="70" Y1="70" StrokeThickness="1" Stroke="Black" Stretch="Fill" Width="68" Margin="611,193,163,37" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Image Source="arrow.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="634,186,187,47" Grid.Row="2">
+        <Line X1="70" X2="70" Y1="70" StrokeThickness="1" Stroke="Black" Stretch="Fill" Width="68" Margin="649,188,125,18" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="70" X2="70" Y1="70" StrokeThickness="1" Stroke="Black" Stretch="Fill" Margin="611,188,165,37" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Image Source="arrow.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="634,183,187,50" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -163,7 +176,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Source="arrow.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="672,187,149,46" Grid.Row="2">
+        <Image Source="arrow.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="672,183,149,50" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -173,8 +186,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="5" Stroke="Black" Stretch="Fill" Margin="487,4,233,182" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="482,25,335,203" Grid.Row="2">
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="5" Stroke="Black" Stretch="Fill" Margin="487,4,228,182" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="483,25,334,203" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -184,8 +197,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="5" Stroke="Black" Stretch="Fill" Margin="482,91,233,36.881" RenderTransformOrigin="-2.594,-0.811"/>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="477,112,340,57.881">
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="5" Stroke="Black" Stretch="Fill" Margin="489,91,228,37" RenderTransformOrigin="-2.594,-0.811"/>
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="484,112,333,58">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -195,7 +208,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="590,112,227,57.881">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="594,112,222,58">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -210,7 +223,7 @@
         <Label Content="D" HorizontalAlignment="Left" Margin="620,41,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.713,-0.582" FontWeight="Bold" FontSize="18" Grid.Row="1" Grid.RowSpan="2" FontFamily="Verdana"/>
         <Rectangle HorizontalAlignment="Left" Height="26" Margin="620,69,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="25"/>
         <Rectangle HorizontalAlignment="Left" Height="26" Margin="620,0,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="25" Grid.Row="2"/>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="-0.284,0.552" Margin="206,139,611,89" Grid.Row="2">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="-0.284,0.552" Margin="202,139,615,89" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -220,7 +233,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="589,26,228,202" Grid.Row="2">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="595,26,222,202" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -242,6 +255,17 @@
                 </TransformGroup>
             </Polygon.RenderTransform>
         </Polygon>
-        <Label Content="Bus de Datos" HorizontalAlignment="Left" Margin="487,42,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold" Height="47" FontSize="13" Grid.RowSpan="2" Grid.Row="1"/>
+        <Label Content="Bus de Datos" HorizontalAlignment="Left" Margin="499,10,0,0" VerticalAlignment="Top" Width="98" FontWeight="Bold" Height="47" FontSize="13" Grid.Row="2"/>
+        <Label Content="CPU" HorizontalAlignment="Left" Margin="414,19,0,0" VerticalAlignment="Top" Height="43" Width="59" FontSize="24" FontFamily="Gadugi" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+        <Label Content="MEMORIA" HorizontalAlignment="Left" Margin="705,43,0,0" VerticalAlignment="Top" Height="43" Width="127" FontSize="20" FontFamily="Gadugi" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+        <ComboBox x:Name="cboOperator" HorizontalAlignment="Left" Margin="563,17,0,0" VerticalAlignment="Top" Width="97" IsReadOnly="True">
+            <ComboBoxItem Name="load">Load</ComboBoxItem>
+            <ComboBoxItem Name="add">Add</ComboBoxItem>
+            <ComboBoxItem Name="sub">Sub</ComboBoxItem>
+            <ComboBoxItem Name="mul">Mul</ComboBoxItem>
+            <ComboBoxItem Name="div">Div</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="txtOperand" HorizontalAlignment="Left" Height="21" Margin="665,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79"/>
+        <Button x:Name="btnAddInstruction" Content="Submit" HorizontalAlignment="Left" Margin="752,17,0,0" VerticalAlignment="Top" Width="59" Click="btnAddInstruction_Click"/>
     </Grid>
 </Window>

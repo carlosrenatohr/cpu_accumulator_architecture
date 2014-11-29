@@ -51,5 +51,10 @@ namespace ARM
             public int Value { get; set; }
         }
 
+        private void grdData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
     }
 }

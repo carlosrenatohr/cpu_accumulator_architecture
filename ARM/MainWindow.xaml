@@ -10,21 +10,21 @@
         </Grid.RowDefinitions>
         <Rectangle HorizontalAlignment="Left" Height="446" Margin="15,8,0,0" Stroke="#FF1340DA" StrokeThickness="4" VerticalAlignment="Top" Width="472" Grid.RowSpan="3"/>
         <StackPanel HorizontalAlignment="Left" Height="384" Margin="614,43,0,0" VerticalAlignment="Top" Width="213" Grid.RowSpan="3" OpacityMask="#FFB62F2F" Background="#FFCCCCCC">
-            <DataGrid x:Name="grdInstructions" Height="77" Margin="10,70,10,30" RowHeight="30" Cursor="Arrow" MinColumnWidth="15" ItemsSource="{Binding}" CanUserAddRows="True">
+            <DataGrid x:Name="grdInstructions" Height="118" Margin="10,70,10,30" RowHeight="30" Cursor="Arrow" MinColumnWidth="15" ItemsSource="{Binding}" CanUserAddRows="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="@" Binding="{Binding memPath1}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Operator" Binding="{Binding Operator}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Operand" Binding="{Binding Operand}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="@" Binding="{Binding memPath1}"/>
+                    <DataGridTextColumn Header="Operador" Binding="{Binding Operator}"/>
+                    <DataGridTextColumn Header="Operando" Binding="{Binding Operand}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <DataGrid x:Name="grdData" Height="77" Margin="10,70,10,30" SelectionMode="Single" SelectionUnit="Cell">
+            <DataGrid x:Name="grdData" Height="140" Margin="10,20,10,30" SelectionChanged="grdData_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="@" Binding="{Binding memPath2}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Variable" Binding="{Binding Operand}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" IsReadOnly="False"></DataGridTextColumn>
+                    <DataGridTextColumn Header="@" Binding="{Binding memPath2}"/>
+                    <DataGridTextColumn Header="Variable" Binding="{Binding Operand}"/>
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Value}" IsReadOnly="False"/>
                 </DataGrid.Columns>
             </DataGrid>
-           
+
         </StackPanel>
         <Label BorderBrush="Black" Content="Acumulador" HorizontalAlignment="Left" Margin="64,28,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
 
@@ -46,8 +46,8 @@
         </Image>
 
         <GridSplitter Grid.RowSpan="3" />
-        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="163,154,611,21" RenderTransformOrigin="-2.594,-0.811"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="195,122,503,6" RenderTransformOrigin="-2.594,-0.811"/>
+        <Line X1="70" X2="70" Y1="70" StrokeThickness="3" Stroke="Black" Stretch="Fill" Width="68" Margin="163,148,611,21" RenderTransformOrigin="-2.594,-0.811"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="195,103,503,25" RenderTransformOrigin="-2.594,-0.811"/>
         <GridSplitter HorizontalAlignment="Left" Height="384" Margin="337,43,0,0" VerticalAlignment="Top" Width="16" Background="#FFCCCCCC" Grid.RowSpan="3"/>
         <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.26,0.5" Margin="185,156,632,13">
             <Image.RenderTransform>
@@ -108,15 +108,15 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Rectangle HorizontalAlignment="Left" Height="29" Margin="443,113,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="39"/>
-        <Label BorderBrush="Black" Content="MAR " HorizontalAlignment="Left" Margin="443,86,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="431,108,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="51"/>
+        <Label BorderBrush="Black" Content="MAR " HorizontalAlignment="Left" Margin="437,82,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="71" Margin="33,112,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="108" Grid.Row="2"/>
         <Label BorderBrush="Black" Content="Unidad de &#xA;Control" HorizontalAlignment="Left" Margin="42,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.433,2.727" Height="62" Width="90" FontWeight="Bold" Grid.Row="2" FontSize="14"/>
-        <Rectangle HorizontalAlignment="Left" Height="44" Margin="202,130,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="70" RenderTransformOrigin="-0.061,0.792" Grid.Row="2"/>
-        <Label BorderBrush="Black" Content="IR " HorizontalAlignment="Left" Margin="225,100,0,0" VerticalAlignment="Top" Grid.Row="2" FontWeight="Bold" FontSize="15" RenderTransformOrigin="2.188,0.433"/>
-        <Rectangle HorizontalAlignment="Left" Height="29" Margin="443,24,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="39" Grid.Row="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="44" Margin="172,130,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.061,0.792" Grid.Row="2"/>
+        <Label BorderBrush="Black" Content="IR " HorizontalAlignment="Left" Margin="202,104,0,0" VerticalAlignment="Top" Grid.Row="2" FontWeight="Bold" FontSize="15" RenderTransformOrigin="2.188,0.433"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="431,24,0,0" Stroke="Black" StrokeThickness="3" VerticalAlignment="Top" Width="51" Grid.Row="2"/>
         <Label BorderBrush="Black" Content="MDR " HorizontalAlignment="Left" Margin="441,41,0,0" VerticalAlignment="Top" Grid.Row="1" FontWeight="Bold" Grid.RowSpan="2"/>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="353,92,399,36" RenderTransformOrigin="-2.594,-0.811"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="353,92,411,36" RenderTransformOrigin="-2.594,-0.811"/>
         <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="349,113,468,57">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -127,7 +127,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="422,113,395,57">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="412,115,405,55">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -137,7 +137,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="353,3,400,183" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="353,3,411,183" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="-0.271,0.61" Margin="349,24,468,204" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -148,7 +148,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="422,24,395,204" Grid.Row="2">
+        <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="0.5,0.5" Margin="412,25,405,203" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -158,7 +158,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="137,118,640,68" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
+        <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="137,118,670,68" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Line X1="0" X2="70" Y1="0"  StrokeThickness="3" Stroke="Black" Stretch="Fill" Margin="277,118,503,68" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Line X1="0" X2="70" Y1="0"  StrokeThickness="1" Stroke="Black" Stretch="Fill" Margin="84,183,197,3" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
         <Line X1="0" X2="70" Y1="0"  StrokeThickness="1" Stroke="Black" Stretch="Fill" Margin="64,202,159,-16" RenderTransformOrigin="-2.594,-0.811" Grid.Row="2"/>
@@ -220,9 +220,11 @@
         </Image>
         <Label Content="Bus de&#xD;&#xA;Direcciones" HorizontalAlignment="Left" Margin="487,65,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold" Height="47" FontSize="13"/>
         <Label Content="@" HorizontalAlignment="Left" Margin="620,65,0,0" VerticalAlignment="Top" Width="40" FontWeight="Bold" FontSize="18" FontFamily="Verdana" Height="36"/>
+        <Label Content="Instrucciones" HorizontalAlignment="Left" Margin="640,75,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="9" FontFamily="Verdana" Height="25"/>
         <Label Content="D" HorizontalAlignment="Left" Margin="620,41,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.713,-0.582" FontWeight="Bold" FontSize="18" Grid.Row="1" Grid.RowSpan="2" FontFamily="Verdana"/>
-        <Rectangle HorizontalAlignment="Left" Height="26" Margin="620,69,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="25"/>
-        <Rectangle HorizontalAlignment="Left" Height="26" Margin="620,0,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="25" Grid.Row="2"/>
+        <Label Content="Datos" HorizontalAlignment="Left" Margin="638,8,0,0" VerticalAlignment="Top" Width="40" FontWeight="Bold" FontSize="9" FontFamily="Verdana" Height="25" Grid.Row="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="26" Margin="620,69,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="100"/>
+        <Rectangle HorizontalAlignment="Left" Height="26" Margin="620,0,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="100" Grid.Row="2"/>
         <Image Height="27" Source="arrow.png" Stretch="Fill" Width="25" RenderTransformOrigin="-0.284,0.552" Margin="269,139,548,89" Grid.Row="2">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -245,7 +247,7 @@
         </Image>
         <Label Content="R/W" HorizontalAlignment="Left" Margin="524,188,0,0" VerticalAlignment="Top" Width="36" Grid.Row="2" FontWeight="Bold"/>
         <Label Content="MFC" HorizontalAlignment="Left" Margin="524,214,0,0" VerticalAlignment="Top" Width="36" Grid.Row="2" FontWeight="Bold"/>
-        <Polygon Points="0,0 35,24 0,48" Stroke="Black" Fill="Black" Margin="319,168,480,29" RenderTransformOrigin="0.5,0.5" Grid.Row="2" >
+        <Polygon Points="0,0 35,24 0,48" Stroke="Black" Fill="Black" Margin="322,168,477,29" RenderTransformOrigin="0.5,0.5" Grid.Row="2" >
             <Polygon.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -256,8 +258,8 @@
             </Polygon.RenderTransform>
         </Polygon>
         <Label Content="Bus de Datos" HorizontalAlignment="Left" Margin="499,10,0,0" VerticalAlignment="Top" Width="98" FontWeight="Bold" Height="47" FontSize="13" Grid.Row="2"/>
-        <Label Content="CPU" HorizontalAlignment="Left" Margin="414,19,0,0" VerticalAlignment="Top" Height="43" Width="59" FontSize="24" FontFamily="Gadugi" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
-        <Label Content="MEMORIA" HorizontalAlignment="Left" Margin="705,43,0,0" VerticalAlignment="Top" Height="43" Width="127" FontSize="20" FontFamily="Gadugi" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+        <Label Content="CPU" HorizontalAlignment="Left" Margin="423,1,0,0" VerticalAlignment="Top" Height="43" Width="59" FontSize="24" FontFamily="Gadugi" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
+        <Label Content="MEMORY" HorizontalAlignment="Left" Margin="718,37,-3,0" VerticalAlignment="Top" Height="43" Width="127" FontSize="20" FontFamily="Gadugi" FontWeight="Bold" FontStyle="Italic" Foreground="Black"/>
         <ComboBox x:Name="cboOperator" HorizontalAlignment="Left" Margin="563,17,0,0" VerticalAlignment="Top" Width="97" IsReadOnly="True">
             <ComboBoxItem Name="load">Load</ComboBoxItem>
             <ComboBoxItem Name="add">Add</ComboBoxItem>
@@ -269,8 +271,10 @@
         <Button x:Name="btnAddInstruction" Content="Submit" HorizontalAlignment="Left" Margin="752,17,0,0" VerticalAlignment="Top" Width="59" Click="btnAddInstruction_Click"/>
         <TextBox x:Name="txtAccumulator" HorizontalAlignment="Left" Height="42" Margin="86,59,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="46"/>
         <TextBox x:Name="txtPc" HorizontalAlignment="Left" Height="29" Margin="255,22,0,0" TextWrapping="Wrap" Text=".." VerticalAlignment="Top" Width="30" Grid.Row="2"/>
-        <TextBox x:Name="txtMdr" HorizontalAlignment="Left" Height="22" Margin="445,29,0,0" TextWrapping="Wrap" Text=".." VerticalAlignment="Top" Width="33" Grid.Row="2" RenderTransformOrigin="0.918,0.618"/>
-        <TextBox x:Name="txtMar" HorizontalAlignment="Left" Height="33" Margin="450,122,0,0" TextWrapping="Wrap" Text=".." VerticalAlignment="Top" Width="32"/>
-        <TextBox x:Name="txtIr" HorizontalAlignment="Left" Height="27" Margin="207,139,0,0" TextWrapping="Wrap" Text=".." VerticalAlignment="Top" Width="57" Grid.Row="2"/>
+        <TextBox x:Name="txtMdr" HorizontalAlignment="Left" Height="27" Margin="437,30,0,0" TextWrapping="Wrap" Text=".." VerticalAlignment="Top" Width="36" Grid.Row="2" RenderTransformOrigin="0.918,0.618"/>
+        <TextBox x:Name="txtMar" HorizontalAlignment="Left" Height="31" Margin="441,112,0,0" TextWrapping="Wrap" Text=".." VerticalAlignment="Top" Width="32"/>
+        <TextBox x:Name="txtIr" HorizontalAlignment="Left" Height="27" Margin="177,139,0,0" TextWrapping="Wrap" Text=".." VerticalAlignment="Top" Width="87" Grid.Row="2"/>
+        <TextBox x:Name="txtSecond" HorizontalAlignment="Left" Height="31" Margin="177,117,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" Width="38"/>
+        <Label BorderBrush="Black" Content="Y" HorizontalAlignment="Left" Margin="182,86,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Height="26"/>
     </Grid>
 </Window>

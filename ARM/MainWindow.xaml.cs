@@ -25,20 +25,33 @@ namespace ARM
         //ObservableCollection<Instruction> Instructions = new ObservableCollection<Instruction>();
         int dirCount = 0;
         int dataCount = 16;
+        List<Instruction> instructions;
 
         public MainWindow()
         {
             InitializeComponent();
+            instructions = new List<Instruction>();
+            /*for (var i = 0; i <= 15; i++) {
+                Instruction _this = new Instruction() { memPath1 = i };
+                grdInstructions.Items.Add(_this);
+            }
+            for (var i = 16; i <= 32; i++)
+            {
+                Instruction _this2 = new Instruction() { memPath2 = i };
+                grdData.Items.Add(_this2);
+            } */
         }
         
         private void btnAddInstruction_Click(object sender, RoutedEventArgs e)
         {
             string cbi = ((ComboBoxItem)cboOperator.SelectedItem).Content.ToString();
-            //Instructions.Add (new Instruction() { memPath = count, Operator = cbi, Operand = txtOperand.Text });
             Instruction _this = new Instruction() { memPath1 = dirCount, memPath2 = dataCount, Operator = cbi, Operand = txtOperand.Text, Value = 0 };
+            //instructions.Add(_this);
+            //grdInstructions.ItemsSource = instructions;
             grdInstructions.Items.Add(_this);
             grdData.Items.Add( _this);
             dirCount++; dataCount++;
+
             //grdData.ItemsSource = data;
         }
 
@@ -51,10 +64,7 @@ namespace ARM
             public int Value { get; set; }
         }
 
-        private void grdData_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+       
 
     }
 }
